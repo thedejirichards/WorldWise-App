@@ -1,0 +1,10 @@
+nav {
+    background-color: #888;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: between;
+    list-style: none;
+}
