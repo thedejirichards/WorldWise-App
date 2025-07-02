@@ -8,3 +8,8 @@ nav ul {
     justify-content: between;
     list-style: none;
 }
+
+
+.nav :global(.active){
+    background-color: green
+}
