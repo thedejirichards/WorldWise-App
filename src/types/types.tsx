@@ -12,23 +12,38 @@
 //   }
 
 export type CityObjectProps = {
-    cityName: string;
-    country: string;
-    emoji: string;
-    date: string;
-    notes: string;
-    position: {
-        lat: number;
-        lng: number
-    };
-    id: string
-}
+  cityName: string;
+  country: string;
+  emoji: string;
+  date: string;
+  notes: string;
+  position: {
+    lat: number;
+    lng: number;
+  };
+  id: string;
+};
 
 export type CityListComponetProp = {
-    cities: CityObjectProps[] | null;
-    isLoading: boolean;
-}
+  cities: CityObjectProps[] | null;
+  isLoading: boolean;
+};
 
 export type CityItemComponentProp = {
-    city: CityObjectProps;
-}
+  city: CityObjectProps;
+};
+export type CountryListComponetProp = {
+  cities: CityObjectProps[] | null;
+  isLoading: boolean;
+};
+
+export type CountryObjectProps = {
+  country: string;
+  emoji: string;
+};
+
+export type ButtonComponentProp = {
+  children: React.ReactNode;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type: string;
+};
