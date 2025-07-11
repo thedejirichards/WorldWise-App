@@ -47,3 +47,8 @@ export type ButtonComponentProp = {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type: string;
 };
+
+export type CitiesContextProp = {
+  cities: CityObjectProps[] | null;
+  isLoading: boolean;
+}
