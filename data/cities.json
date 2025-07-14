@@ -16,7 +16,7 @@
       "cityName": "Madrid",
       "country": "Spain",
       "emoji": "ES",
-      "date": "2027-07-15T08:22:53.976Z",
+      "date": "2027-10-31T15:59:59.138Z",
       "notes": "",
       "position": {
         "lat": 40.46635901755316,
@@ -28,7 +28,7 @@
       "cityName": "Berlin",
       "country": "Germany",
       "emoji": "DE",
-      "date": "2027-02-12T09:24:11.863Z",
+      "date": "2027-10-31T15:59:59.138Z",
       "notes": "Amazing 😃",
       "position": {
         "lat": 52.53586782505711,
@@ -46,19 +46,43 @@
         "lat": 37.0194,
         "lng": -7.9304
       },
-      "id": 73930360
+      "id": 53930360
     },
     {
-      "cityName": "Barcelona",
-      "country": "Spain",
-      "emoji": "ES",
-      "date": "2027-07-15T08:22:53.976Z",
+      "cityName": "Lagos",
+      "country": "Nigeria",
+      "emoji": "NG",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "Chop life city",
+      "position": {
+        "lat": 6.5244,
+        "lng": 3.3792
+      },
+      "id": 27906751
+    },
+    {
+      "cityName": "Cairo",
+      "country": "Egypt",
+      "emoji": "EG",
+      "date": "2027-10-31T15:59:59.138Z",
       "notes": "",
       "position": {
-        "lat": 41.3851,
-        "lng": 2.1734
+        "lat": 30.0444,
+        "lng": 31.2357
       },
-      "id": 17906751
+      "id": 33906751
+    },
+    {
+      "cityName": "Beijing",
+      "country": "China",
+      "emoji": "CN",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "",
+      "position": {
+        "lat": 39.9042,
+        "lng": 116.4074
+      },
+      "id": 10906751
     }
   ]
 }

@@ -51,4 +51,6 @@ export type ButtonComponentProp = {
 export type CitiesContextProp = {
   cities: CityObjectProps[] | null;
   isLoading: boolean;
+  getCity: (id: string) => void;
+  currentCity: CityObjectProps | null;
 }

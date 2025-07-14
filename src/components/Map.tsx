@@ -1,18 +1,44 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./Map.module.css";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useState } from "react";
+import { useCities } from "../context/CitiesContext";
 function Map() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [mapPosition, setMapPosition] = useState<number[]>([40, 0]);
   const [searchParam, setSearchParams] = useSearchParams();
-  const lat = searchParam.get("lat");
-  const lng = searchParam.get("lng");
+  const mapLat = searchParam.get("lat");
+  const mapLng = searchParam.get("lng");
+  const { cities } = useCities();
   return (
-    <div className={styles.mapContainer} onClick={()=> navigate("form")}>
-      <p>Map {`(${lat}, ${lng})`}</p>
-      <button
-        onClick={() => setSearchParams({ lat: lat || "", lng: lng || "" })}
+    <div className={styles.mapContainer}>
+      <MapContainer
+        center={[mapLat || 40, mapLng|| 0]}
+        // center={mapPosition}
+        zoom={6}
+        scrollWheelZoom={true}
+        className={styles.map}
       >
-        Update Params
-      </button>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        />
+        {cities?.map((city) => (
+          <Marker
+            position={[city.position.lat, city.position.lng]}
+            key={city.id}
+          >
+            <Popup>
+              <img
+                src={`https://flagsapi.com/${city.emoji}/shiny/64.png`}
+                alt={`${city.emoji}`}
+                className={styles.img}
+              />{" "}
+              {city.cityName}
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   );
 }
