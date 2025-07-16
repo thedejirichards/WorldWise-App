@@ -54,3 +54,8 @@ export type CitiesContextProp = {
   getCity: (id: string) => void;
   currentCity: CityObjectProps | null;
 }
+
+export type PositionProp ={
+  lat: number;
+  lng: number;
+}
