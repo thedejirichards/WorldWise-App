@@ -6,7 +6,6 @@ import {
   Popup,
   TileLayer,
   useMap,
-  useMapEvent,
   useMapEvents,
 } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
@@ -14,17 +13,16 @@ import { useEffect, useState } from "react";
 import { useCities } from "../context/CitiesContext";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
+import useUrlPosition from "../hooks/useUrlPosition";
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState<number[]>([40, 0]);
-  const [searchParam] = useSearchParams();
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
     getPosition,
   } = useGeolocation();
-  const mapLat = searchParam.get("lat");
-  const mapLng = searchParam.get("lng");
+  const [mapLat, mapLng] = useUrlPosition() 
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([Number(mapLat), Number(mapLng)]);
   }, [mapLat, mapLng]);
